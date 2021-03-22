@@ -1,12 +1,14 @@
-{% set version = "1.16.0" %}
+{% set name = "pynmea2" %}
+{% set version = "1.17.0" %}
+
 
 package:
-  name: pynmea2
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/p/pynmea2/pynmea2-{{ version }}.tar.gz
-  sha256: 4fbb2a293883b24932e8403730f654b479828c218b00470031478c53202e2f71
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pynmea2-{{ version }}.tar.gz
+  sha256: 2d415c586bf2f40aebf452d62105528428806a5333321bfcdcfadf16caccbd74
 
 build:
   number: 0
@@ -15,23 +17,25 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
 
 test:
   imports:
     - pynmea2
     - pynmea2.types
-    - pynmea2.types.proprietary
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/Knio/pynmea2
-  license: MIT
-  license_family: MIT
-  license_file: LICENSE
   summary: Python library for the NMEA 0183 protcol
+  license: MIT
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
