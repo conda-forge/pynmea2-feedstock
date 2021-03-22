@@ -1,4 +1,4 @@
-{% set version = "1.16.0" %}
+{% set version = "1.17.0" %}
 
 package:
   name: pynmea2
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pynmea2/pynmea2-{{ version }}.tar.gz
-  sha256: 4fbb2a293883b24932e8403730f654b479828c218b00470031478c53202e2f71
+  sha256: 2d415c586bf2f40aebf452d62105528428806a5333321bfcdcfadf16caccbd74
 
 build:
   number: 0
